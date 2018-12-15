@@ -1,4 +1,4 @@
-package  com.neet.DiamondHunter.MapViewer;
+package com.neet.DiamondHunter.MapViewer;
 import com.neet.DiamondHunter.MapViewer.*;
 import com.neet.DiamondHunter.TileMap.*;
 
@@ -14,7 +14,7 @@ public class GamePanel extends JPanel implements Runnable {
         private Image dbImage ;
         private Graphics dbg;
 
-        static final int GWIDTH = 700 , GHEIGHT = 500;
+        static final int GWIDTH = 1000 , GHEIGHT = 1000;
         static final Dimension gameDim = new Dimension(GWIDTH,GHEIGHT);
 
         private Thread game;
@@ -22,7 +22,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         //Game objects
 
-    World world;
+    World1 world;
 
     public TileMap tileMap;
 
@@ -30,7 +30,9 @@ public class GamePanel extends JPanel implements Runnable {
 
     public GamePanel(){
 
-        world = new World();
+        world = new World1();
+        world.loadTiles();
+        world.loadMap("/Resources/Maps/testmap.map");
 
         setPreferredSize(gameDim);
         setBackground(Color.WHITE);
@@ -127,7 +129,6 @@ public class GamePanel extends JPanel implements Runnable {
             running = false;
         }
     }
-
 
 
     private void log(String s){

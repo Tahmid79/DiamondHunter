@@ -1,4 +1,4 @@
-package  com.neet.DiamondHunter.MapViewer;
+package com.neet.DiamondHunter.MapViewer;
 import com.neet.DiamondHunter.MapViewer.*;
 import com.neet.DiamondHunter.TileMap.*;
 import javax.imageio.ImageIO;
@@ -22,9 +22,9 @@ public class World {
 
     public World(){
 
-    tilemap = new ImageIcon("C:\\Users\\Tahmid Farhan\\Desktop\\LC\\CW2-Diamond-Hunter\\DiamondHunter\\Resources\\Tilesets\\testtileset.gif") .getImage() ;
+    //tilemap = new ImageIcon("C:\\Users\\Tahmid Farhan\\Desktop\\LC\\CW2-Diamond-Hunter\\DiamondHunter\\Resources\\Tilesets\\testtileset.gif") .getImage() ;
 
-    File img = new File("C:\\Users\\Tahmid Farhan\\Desktop\\LC\\CW2-Diamond-Hunter\\DiamondHunter\\Resources\\Tilesets\\testtileset.gif");
+    File img = new File("Resources/Tilesets/testtileset.gif");
 
     try {
         tls = ImageIO.read(img);
