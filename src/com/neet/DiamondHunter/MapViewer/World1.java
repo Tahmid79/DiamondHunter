@@ -95,12 +95,12 @@ public class World1 {
 
     }
 
-    public void loadMap(String s) {
+    public void loadMap() {
 
         try {
             FileReader mpfl = new FileReader("Resources/Maps/testmap.map");
 
-            InputStream in = getClass().getResourceAsStream(s);
+            //InputStream in = getClass().getResourceAsStream(s);
             BufferedReader br = new BufferedReader(
                    mpfl
             );

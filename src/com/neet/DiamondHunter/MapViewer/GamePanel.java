@@ -32,7 +32,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         world = new World1();
         world.loadTiles();
-        world.loadMap("/Resources/Maps/testmap.map");
+        world.loadMap( );
 
         setPreferredSize(gameDim);
         setBackground(Color.WHITE);

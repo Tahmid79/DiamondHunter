@@ -7,28 +7,39 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.DiamondHunter.sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.DiamondHunter.sample.Controller">
    <children>
-<Button fx:id="btn" layoutX="483.0" layoutY="80.0" mnemonicParsing="false" onAction="#showoutput" text="Hello Button" />
-<Label fx:id="label" layoutX="483.0" layoutY="27.0" prefHeight="43.0" prefWidth="110.0" text="Tahmid" />
-<Button fx:id="btn2" layoutX="482.0" layoutY="127.0" mnemonicParsing="false" onAction="#jp" prefHeight="25.0" prefWidth="83.0" text="SW Button" />
-      <ImageView fx:id="map" fitHeight="450.0" fitWidth="446.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="file:/C:/Users/Tahmid%20Farhan/Desktop/MP_VWR/Images%20-%20Copy/MP.PNG" />
-         </image>
-      </ImageView>
-      <AnchorPane fx:id="anc" layoutX="14.0" layoutY="5.0" prefHeight="446.0" prefWidth="446.0">
+      <Button layoutX="519.0" layoutY="267.0" mnemonicParsing="false" text="RESET" />
+      <Button layoutX="501.0" layoutY="219.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="SAVE" />
+<Button fx:id="btn" layoutX="501.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="SET AXE" />
+<Label fx:id="label" layoutX="501.0" layoutY="29.0" prefHeight="38.0" prefWidth="83.0" />
+<Button fx:id="btn2" layoutX="501.0" layoutY="142.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="SET BOAT" />
+      <AnchorPane fx:id="anc" layoutX="14.0" layoutY="9.0" prefHeight="480.0" prefWidth="480.0">
          <children>
-            <StackPane fx:id="stp" layoutX="234.0" layoutY="59.0" prefHeight="13.0" prefWidth="7.0">
+            <ImageView fx:id="map" fitHeight="480.0" fitWidth="480.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@MP.PNG" />
+               </image>
+            </ImageView>
+            <StackPane fx:id="stp" layoutX="234.0" layoutY="59.0" onMouseClicked="#np" prefHeight="13.0" prefWidth="7.0">
                <children>
-                  <ImageView blendMode="SRC_ATOP" fitHeight="15.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView blendMode="SRC_ATOP" fitHeight="49.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/C:/Users/Tahmid%20Farhan/Desktop/MP_VWR/Images%20-%20Copy/Boat.gif" />
+                        <Image url="@Boat.gif" />
+                     </image>
+                  </ImageView>
+               </children></StackPane>
+            <StackPane fx:id="stp2" layoutX="165.0" layoutY="168.0" onMouseClicked="#np" prefHeight="13.0" prefWidth="7.0">
+               <children>
+                  <ImageView blendMode="SRC_ATOP" fitHeight="49.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Axe.gif" />
                      </image>
                   </ImageView>
                </children>
             </StackPane>
          </children>
       </AnchorPane>
+      <Label fx:id="blocked" layoutX="498.0" layoutY="316.0" prefHeight="62.0" prefWidth="90.0" text="Label" />
         </children>
         </AnchorPane>
