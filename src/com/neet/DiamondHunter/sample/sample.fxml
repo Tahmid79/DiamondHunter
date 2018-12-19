@@ -2,36 +2,36 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.DiamondHunter.sample.Controller">
+<AnchorPane fx:id="Parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="651.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.DiamondHunter.sample.Controller">
    <children>
-      <Button layoutX="519.0" layoutY="267.0" mnemonicParsing="false" text="RESET" />
-      <Button layoutX="501.0" layoutY="219.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="SAVE" />
-<Button fx:id="btn" layoutX="501.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="SET AXE" />
-<Label fx:id="label" layoutX="501.0" layoutY="29.0" prefHeight="38.0" prefWidth="83.0" />
-<Button fx:id="btn2" layoutX="501.0" layoutY="142.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="SET BOAT" />
-      <AnchorPane fx:id="anc" layoutX="14.0" layoutY="9.0" prefHeight="480.0" prefWidth="480.0">
+
+<Button fx:id="btn" contentDisplay="CENTER" layoutX="529.0" layoutY="536.0" mnemonicParsing="false" onAction="#setAxeRC" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 20px;" text="SET AXE" />
+<Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" layoutX="529.0" layoutY="379.0" mnemonicParsing="false" onAction="#setBoatRC" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 22px;" text="SET BOAT" />
+      <AnchorPane fx:id="anc" layoutX="1.0" layoutY="99.0" prefHeight="480.0" prefWidth="480.0">
          <children>
-            <ImageView fx:id="map" fitHeight="480.0" fitWidth="480.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="map" fitHeight="480.0" fitWidth="480.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@MP.PNG" />
                </image>
             </ImageView>
-            <StackPane fx:id="stp" layoutX="234.0" layoutY="59.0" onMouseClicked="#np" prefHeight="13.0" prefWidth="7.0">
+            <StackPane fx:id="stp" layoutX="212.0" layoutY="144.0" onMouseClicked="#np" prefHeight="12.0" prefWidth="12.0">
                <children>
-                  <ImageView blendMode="SRC_ATOP" fitHeight="49.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView blendMode="SRC_ATOP" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Boat.gif" />
                      </image>
                   </ImageView>
                </children></StackPane>
-            <StackPane fx:id="stp2" layoutX="165.0" layoutY="168.0" onMouseClicked="#np" prefHeight="13.0" prefWidth="7.0">
+            <StackPane fx:id="stp2" layoutX="218.0" layoutY="122.0" onMouseClicked="#np" prefHeight="12.0" prefWidth="12.0">
                <children>
-                  <ImageView blendMode="SRC_ATOP" fitHeight="49.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView blendMode="SRC_ATOP" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Axe.gif" />
                      </image>
@@ -40,6 +40,35 @@
             </StackPane>
          </children>
       </AnchorPane>
-      <Label fx:id="blocked" layoutX="498.0" layoutY="316.0" prefHeight="62.0" prefWidth="90.0" text="Label" />
+      <Label fx:id="blocked" alignment="CENTER" layoutX="492.0" layoutY="128.0" prefHeight="100.0" prefWidth="154.0" text="Row/Column">
+         <font>
+            <Font name="Euphorigenic" size="19.0" />
+         </font>
+         <effect>
+            <Glow level="0.4">
+               <input>
+                  <Glow />
+               </input>
+            </Glow>
+         </effect></Label>
+      <Label fx:id="btPos" alignment="CENTER" layoutX="493.0" layoutY="272.0" prefHeight="100.0" prefWidth="154.0" text="  Pirate Boat Position">
+         <font>
+            <Font name="Euphorigenic" size="21.0" />
+         </font>
+         <effect>
+            <Glow level="0.36" />
+         </effect></Label>
+      <Label fx:id="axPos" alignment="CENTER" layoutX="492.0" layoutY="428.0" prefHeight="100.0" prefWidth="154.0" text="  Pirate Axe Position">
+         <font>
+            <Font name="Euphorigenic" size="21.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" prefHeight="63.0" prefWidth="272.0">
+         <font>
+            <Font name="Euphorigenic" size="53.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Label>
         </children>
         </AnchorPane>

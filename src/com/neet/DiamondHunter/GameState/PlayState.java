@@ -20,6 +20,7 @@ import com.neet.DiamondHunter.Manager.GameStateManager;
 import com.neet.DiamondHunter.Manager.JukeBox;
 import com.neet.DiamondHunter.Manager.Keys;
 import com.neet.DiamondHunter.TileMap.TileMap;
+import com.neet.DiamondHunter.sample.Controller;
 
 public class PlayState extends GameState {
 	
@@ -54,6 +55,13 @@ public class PlayState extends GameState {
 	
 	// transition box
 	private ArrayList<Rectangle> boxes;
+
+
+	int btR;
+	int btC;
+	int axR ;
+	int axC ;
+
 	
 	public PlayState(GameStateManager gsm) {
 		super(gsm);
@@ -76,7 +84,11 @@ public class PlayState extends GameState {
 		
 		// fill lists
 		populateDiamonds();
-		populateItems();
+		try{
+		    populateItems();
+		}catch (Exception e){
+		    e.printStackTrace();
+        };
 		
 		// initialize player
 		player.setTilePosition(17, 17);
@@ -170,18 +182,25 @@ public class PlayState extends GameState {
 		
 	}
 	
-	private void populateItems() {
-		
+	private void populateItems() throws Exception {
+
+	    btR =Controller.getBoatRow();
+	    btC = Controller.getBoatCol();
+
+        axR=Controller.getAxeRow();
+        axC=Controller.getAxeCol();
+
+
 		Item item;
 		
 		item = new Item(tileMap);
 		item.setType(Item.AXE);
-		item.setTilePosition(26, 37);
+		item.setTilePosition(axR, axC);
 		items.add(item);
 		
 		item = new Item(tileMap);
 		item.setType(Item.BOAT);
-		item.setTilePosition(12, 4);
+		item.setTilePosition(btR, btC);
 		items.add(item);
 		
 	}

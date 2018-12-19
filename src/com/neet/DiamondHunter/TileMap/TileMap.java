@@ -97,15 +97,15 @@ public class TileMap {
 			
 			InputStream in = getClass().getResourceAsStream(s);
 			BufferedReader br = new BufferedReader(
-					new InputStreamReader(in)
-			);
-
+						new InputStreamReader(in)
+					);
+			
 			numCols = Integer.parseInt(br.readLine());
 			numRows = Integer.parseInt(br.readLine());
 			map = new int[numRows][numCols];
 			width = numCols * tileSize;
 			height = numRows * tileSize;
-
+			
 			xmin = GamePanel.WIDTH - width;
 			xmin = -width;
 			xmax = 0;
@@ -211,25 +211,25 @@ public class TileMap {
 	}
 	
 	public void draw(Graphics2D g) {
-
+		
 		for(int row = rowOffset; row < rowOffset + numRowsToDraw; row++) {
-
+		
 			if(row >= numRows) break;
-
+			
 			for(int col = colOffset; col < colOffset + numColsToDraw; col++) {
-
+				
 				if(col >= numCols) break;
 				if(map[row][col] == 0) continue;
-
+				
 				int rc = map[row][col];
 				int r = rc / numTilesAcross;
 				int c = rc % numTilesAcross;
-
+				
 				g.drawImage(
 					tiles[r][c].getImage(),
 					x + col * tileSize,
-						y + row * tileSize,
-						null
+					y + row * tileSize,
+					null
 				);
 				
 			}

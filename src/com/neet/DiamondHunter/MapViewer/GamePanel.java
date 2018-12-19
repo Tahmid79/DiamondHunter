@@ -14,7 +14,7 @@ public class GamePanel extends JPanel implements Runnable {
         private Image dbImage ;
         private Graphics dbg;
 
-        static final int GWIDTH = 1000 , GHEIGHT = 1000;
+        static final int GWIDTH = 1200 , GHEIGHT = 1100;
         static final Dimension gameDim = new Dimension(GWIDTH,GHEIGHT);
 
         private Thread game;
@@ -30,9 +30,10 @@ public class GamePanel extends JPanel implements Runnable {
 
     public GamePanel(){
 
+
         world = new World1();
         world.loadTiles();
-        world.loadMap( );
+        world.loadMap();
 
         setPreferredSize(gameDim);
         setBackground(Color.WHITE);
@@ -129,6 +130,7 @@ public class GamePanel extends JPanel implements Runnable {
             running = false;
         }
     }
+
 
 
     private void log(String s){
