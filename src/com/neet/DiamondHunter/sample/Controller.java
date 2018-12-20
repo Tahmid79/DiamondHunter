@@ -7,7 +7,6 @@ import javafx.animation.PauseTransition;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 
-import javafx.fxml.Initializable;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -17,17 +16,14 @@ import javafx.scene.layout.*;
 
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
-
-
-import java.awt.*;
 import java.io.*;
-import java.net.URL;
-import java.util.Arrays;
-import java.util.ResourceBundle;
+
 
 
 public class Controller  {
-    World1 wr;
+    World1 wr; //Creating instance of World1 class
+
+    /*Creating instance for panes,buttons to give functionalities*/
 
    @FXML
    Button btn ,btn2;
@@ -40,6 +36,7 @@ public class Controller  {
    @FXML
     StackPane stp , stp2;
 
+   /*Variable declarations*/
    boolean bt_moveable=false , ax_moveable=false,tileblocked=false;
    int bt_count=0;
    int ax_count=0;
@@ -57,20 +54,20 @@ public class Controller  {
   public void tileblocked(){
 
 
-      map.addEventHandler (MouseEvent.MOUSE_MOVED,event -> {
+      map.addEventHandler (MouseEvent.MOUSE_MOVED,event -> { //Adding mouse listeners for map.
+               /*Each tile size is 20*/
+               int x = (int) ((event.getX()) / 12); //Set size of image 480*480
+               int y = (int) ((event.getY()) / 12); //So, for getting each tile divided by 12.
 
-               int x = (int) ((event.getX()) / 12);
-               int y = (int) ((event.getY()) / 12);
-
-               if (x >= 40)
+               if (x >= 40)   //To avoid NULL pointer exceptions.
                    x = 39;
                if (y >= 40)
                    y = 39;
 
 
                int p = wr.map[y][x] / 20;
-               int q = wr.map[y][x] % 20;
 
+               //Condition for BLOCKED/UNBLOCKED tile.
                if (p == 0) {
                    blocked.setText("R = " + y + " C =  " + x + "\nNot Blocked");
                    tileblocked = false;
@@ -95,9 +92,10 @@ public class Controller  {
 
 
     @FXML
+    /*This class checks condition for mobility of boat and axe across the map.*/
     public void jp() {
 
-      anc.setOnMouseClicked(new EventHandler<MouseEvent>() {
+      anc.setOnMouseClicked(new EventHandler<MouseEvent>() { //Adding mouse listener to AnchorPane
 
           @Override
           public void handle(MouseEvent event) {
@@ -111,11 +109,14 @@ public class Controller  {
 
 
                   stp.setLayoutX( coord1 );
+                  /*When mouse is clicked once on map bt_count becomes 2 as bt_count is incremented one in imageview
+                  as well as in AnchorPane*/
+
                   stp.setLayoutY( coord2 );
                   bt_count++;
 
 
-                if (bt_count == 3 || bt_count > 3) {
+                if (bt_count == 3 || bt_count > 3) {//When bt_count becomes 3 we are setting it to 0.
                  bt_moveable = false;
                  bt_count = 0;
             }
@@ -123,7 +124,7 @@ public class Controller  {
                             }
 
 ////////////////////////////////////////////////////////////////////////////////
-
+              //Similar to above(axe)
               if(ax_moveable && !tileblocked){
 
                   stp2.setLayoutX(  ( (int)Math.round(x)/12)*12 );
@@ -143,9 +144,9 @@ public class Controller  {
     }
 
 
-    public void np(){
+    public void np(){ //Stackpane contains image of boat.
 
-      stp.setOnMouseClicked(new EventHandler<MouseEvent>() {
+      stp.setOnMouseClicked(new EventHandler<MouseEvent>() {//Mobility of boat across the map.
           @Override
           public void handle(MouseEvent event) {
               bt_count++;
@@ -158,9 +159,9 @@ public class Controller  {
 
 
 
-    public void ap(){
+    public void ap(){//Stackpane contains image of axe
 
-        stp2.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        stp2.setOnMouseClicked(new EventHandler<MouseEvent>() {//Mobility of axe across the map.
             @Override
             public void handle(MouseEvent event) {
                 ax_count++;
@@ -172,8 +173,8 @@ public class Controller  {
 
     }
 
-    public void showPos() {
-        PauseTransition wait = new PauseTransition(Duration.millis(10));
+    public void showPos() {//DISPLAYS the boat and axe coordinates
+        PauseTransition wait = new PauseTransition(Duration.millis(10)); //Updates the mouse position every 10 ms.
         wait.setOnFinished((e) -> {
 
 
@@ -193,7 +194,8 @@ public class Controller  {
 
     }
 
-    public void setBoatRC  ()  throws Exception {
+    public void setBoatRC ()  throws Exception {
+        //Writing the boat coordinates in a file.
         File file = new File("src/com/neet/DiamondHunter/sample/cord.txt");
         BufferedReader brr  =new BufferedReader(new FileReader(file));
         int [] arr = new int[4];
@@ -217,6 +219,7 @@ public class Controller  {
     }
 
     public void setAxeRC() throws Exception {
+        //Writing the axe coordinates in a file.
         File file = new File("src/com/neet/DiamondHunter/sample/cord.txt");
         BufferedReader brr  =new BufferedReader(new FileReader(file));
         int [] arr = new int[4];
@@ -239,6 +242,8 @@ public class Controller  {
 
     }
 
+
+    /*Getting boat and axe coordinates from the file*/
     public static int getBoatRow() throws Exception{
         int row=0;
 
@@ -313,7 +318,7 @@ public class Controller  {
 
 
 
-    public void initPos() throws Exception{
+    public void initPos() throws Exception{//setting the boat,axe coordinates on map.
 
        File file = new File("src/com/neet/DiamondHunter/sample/cord.txt");
         BufferedReader brr = new BufferedReader(new FileReader(file));
@@ -351,8 +356,8 @@ public class Controller  {
 
 
 
-    public void initialize() {
-
+    public void initialize() {//Calling every functions
+       //Sets background image for application.
        BackgroundImage bgIMG = new BackgroundImage(new Image("com/neet/DiamondHunter/sample/DRAFT3.jpg",645,586,false,true),BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,BackgroundSize.DEFAULT);
        Parent.setBackground(new Background(bgIMG));
 
@@ -365,11 +370,7 @@ public class Controller  {
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
-
         tileblocked();
-
         jp();
         np();
         ap();

@@ -12,11 +12,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml") );
-        primaryStage.setTitle("Map Viewer");
+        primaryStage.setTitle("Map Viewer"); //Title of the application
 
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(false); //Setting sizable property of application interface of application to false.
 
-        primaryStage.setScene(new Scene(root, 645, 586));
+        primaryStage.setScene(new Scene(root, 630, 610));//Width and Height of application.
         primaryStage.show();
     }
 

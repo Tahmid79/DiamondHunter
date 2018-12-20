@@ -6,14 +6,15 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="651.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.DiamondHunter.sample.Controller">
+<AnchorPane fx:id="Parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="645.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.DiamondHunter.sample.Controller">
    <children>
 
-<Button fx:id="btn" contentDisplay="CENTER" layoutX="529.0" layoutY="536.0" mnemonicParsing="false" onAction="#setAxeRC" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 20px;" text="SET AXE" />
-<Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" layoutX="529.0" layoutY="379.0" mnemonicParsing="false" onAction="#setBoatRC" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 22px;" text="SET BOAT" />
+<Button fx:id="btn" contentDisplay="CENTER" layoutX="522.0" layoutY="538.0" mnemonicParsing="false" onAction="#setAxeRC" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 20px;" text="SET AXE" />
+<Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" layoutX="521.0" layoutY="385.0" mnemonicParsing="false" onAction="#setBoatRC" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 22px;" text="SET BOAT" />
       <AnchorPane fx:id="anc" layoutX="1.0" layoutY="99.0" prefHeight="480.0" prefWidth="480.0">
          <children>
             <ImageView fx:id="map" fitHeight="480.0" fitWidth="480.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
@@ -40,9 +41,9 @@
             </StackPane>
          </children>
       </AnchorPane>
-      <Label fx:id="blocked" alignment="CENTER" layoutX="492.0" layoutY="128.0" prefHeight="100.0" prefWidth="154.0" text="Row/Column">
+      <Label fx:id="blocked" alignment="CENTER" contentDisplay="CENTER" layoutX="487.0" layoutY="126.0" prefHeight="100.0" prefWidth="150.0" text="TILE TYPE">
          <font>
-            <Font name="Euphorigenic" size="19.0" />
+            <Font name="Arial" size="14.0" />
          </font>
          <effect>
             <Glow level="0.4">
@@ -51,16 +52,16 @@
                </input>
             </Glow>
          </effect></Label>
-      <Label fx:id="btPos" alignment="CENTER" layoutX="493.0" layoutY="272.0" prefHeight="100.0" prefWidth="154.0" text="  Pirate Boat Position">
+      <Label fx:id="btPos" alignment="CENTER" contentDisplay="CENTER" layoutX="487.0" layoutY="274.0" prefHeight="100.0" prefWidth="150.0" text="BOAT POSITION" textAlignment="CENTER">
          <font>
-            <Font name="Euphorigenic" size="21.0" />
+            <Font name="Arial" size="15.0" />
          </font>
          <effect>
             <Glow level="0.36" />
          </effect></Label>
-      <Label fx:id="axPos" alignment="CENTER" layoutX="492.0" layoutY="428.0" prefHeight="100.0" prefWidth="154.0" text="  Pirate Axe Position">
+      <Label fx:id="axPos" alignment="CENTER" contentDisplay="CENTER" layoutX="488.0" layoutY="426.0" prefHeight="100.0" prefWidth="150.0" text="AXE POSITION">
          <font>
-            <Font name="Euphorigenic" size="21.0" />
+            <Font name="Arial" size="15.0" />
          </font></Label>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" prefHeight="63.0" prefWidth="272.0">
          <font>
@@ -69,6 +70,17 @@
          <effect>
             <Glow level="1.0" />
          </effect>
+      </Label>
+      <Region layoutX="1.0" layoutY="580.0" prefHeight="38.0" prefWidth="645.0" style="-fx-background-color: ORANGE;" />
+      <Label layoutX="14.0" layoutY="589.0" prefHeight="25.0" prefWidth="317.0" text="CLICK THE BOAT/AXE THEN CLICK AGAIN TO PLACE THEM">
+         <font>
+            <Font name="Calibri Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="353.0" layoutY="593.0" prefHeight="17.0" prefWidth="287.0" text="DON'T FORGET TO CLICK THE SETBOAT/AXE BUTTON">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
       </Label>
         </children>
         </AnchorPane>

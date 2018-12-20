@@ -1,13 +1,7 @@
 package com.neet.DiamondHunter.MapViewer;
-import com.neet.DiamondHunter.MapViewer.*;
-import com.neet.DiamondHunter.TileMap.*;
-
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
+
 
 public class GamePanel extends JPanel implements Runnable {
 
@@ -24,15 +18,13 @@ public class GamePanel extends JPanel implements Runnable {
 
     World1 world;
 
-    public TileMap tileMap;
-
 
 
     public GamePanel(){
 
 
         world = new World1();
-        world.loadTiles();
+        world.loadTiles(); //calling loadtiles,loadmap functions.
         world.loadMap();
 
         setPreferredSize(gameDim);
@@ -40,23 +32,6 @@ public class GamePanel extends JPanel implements Runnable {
         setFocusable(true);
         requestFocus();
 
-        //Handle all key inputs from user
-        addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-
-            }
-        });
 
     }
 
@@ -125,15 +100,5 @@ public class GamePanel extends JPanel implements Runnable {
         }
     }
 
-    public void stopGame(){
-        if(running){
-            running = false;
-        }
-    }
 
-
-
-    private void log(String s){
-        System.out.println(s);
-    }
 }

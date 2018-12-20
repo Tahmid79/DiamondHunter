@@ -1,10 +1,7 @@
 package com.neet.DiamondHunter.MapViewer;
-
 import com.neet.DiamondHunter.Main.GamePanel;
-import com.neet.DiamondHunter.MapViewer.*;
 import com.neet.DiamondHunter.TileMap.*;
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -16,10 +13,7 @@ public class World1 {
     // position
     public int x;
     public int y;
-    public int xdest;
-    public int ydest;
     public int speed;
-    public boolean moving;
 
     // bounds
     public int xmin;
@@ -63,7 +57,7 @@ public class World1 {
         File img = new File("Resources/Tilesets/testtileset.gif");
 
         try {
-
+           //getting subimages of tiles which is blocked and unblocked.
             tileset = ImageIO.read(img);
 
             numTilesAcross = tileset.getWidth() / tileSize;
@@ -97,9 +91,10 @@ public class World1 {
     public void loadMap( ) {
 
         try {
+            //Reading the testMap file.
             InputStreamReader mpfl = new InputStreamReader(getClass().getResourceAsStream("/Maps/testmap.map"));
 
-           // InputStream in = getClass().getResourceAsStream(s);
+
             BufferedReader br = new BufferedReader(mpfl);
 
             numCols = Integer.parseInt(br.readLine());
@@ -133,6 +128,7 @@ public class World1 {
     }
 
     public void draw(Graphics g) {
+        //Drawing the map (size 40*40)
 
         for(int row = 0; row < 40; row++) {
 
@@ -148,6 +144,7 @@ public class World1 {
                  int c = rc % numTilesAcross;
 
                 g.drawImage(
+                        //Making bigger map(increasing size of the map.
                         tiles[r][c].getImage().getScaledInstance(24,24,Image.SCALE_SMOOTH),
                         x + col * (tileSize+8),
                         y + row * (tileSize+8),
