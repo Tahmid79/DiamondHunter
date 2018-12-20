@@ -16,7 +16,7 @@ public class Main extends Application {
 
         primaryStage.setResizable(false); //Setting sizable property of application interface of application to false.
 
-        primaryStage.setScene(new Scene(root, 645, 610));//Width and Height of application.
+        primaryStage.setScene(new Scene(root, 630, 610));//Width and Height of application.
         primaryStage.show();
     }
 

@@ -76,7 +76,7 @@ public class GameStateManager {
 			gameStates[currentState].update();
 		}
 	}
-	
+
 	public void draw(Graphics2D g) {
 		if(paused) {
 			pauseState.draw(g);
