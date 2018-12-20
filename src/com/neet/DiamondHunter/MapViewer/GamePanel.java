@@ -34,7 +34,7 @@ public class GamePanel extends JPanel implements Runnable {
 
 
     }
-
+    //Boolean to store running state
     public void run(){
         while(running){
             gameUpdate();

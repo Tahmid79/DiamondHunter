@@ -116,7 +116,7 @@ public class World1 {
                 String[] tokens = line.split(delims);
                 for(int col = 0; col < numCols; col++) {
                     map[row][col] = Integer.parseInt(tokens[col]);
-                }
+                }//copying the map file to the map[][] array
             }
 
         }
