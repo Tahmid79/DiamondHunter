@@ -8,12 +8,7 @@ package com.neet.DiamondHunter.Manager;
 
 import java.awt.Graphics2D;
 
-import com.neet.DiamondHunter.GameState.GameOverState;
-import com.neet.DiamondHunter.GameState.GameState;
-import com.neet.DiamondHunter.GameState.IntroState;
-import com.neet.DiamondHunter.GameState.MenuState;
-import com.neet.DiamondHunter.GameState.PauseState;
-import com.neet.DiamondHunter.GameState.PlayState;
+import com.neet.DiamondHunter.GameState.*;
 
 
 public class GameStateManager {
