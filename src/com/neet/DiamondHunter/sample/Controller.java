@@ -44,8 +44,8 @@ public class Controller  {
    int coord1, coord2;
 
 
-    int br, bc;
-    int ar, ac;
+    int br, bc; // boat row and column
+    int ar, ac; // axe row and column
 
 //
 
@@ -242,6 +242,8 @@ public class Controller  {
 
     }
 
+        //Static getters to obtain boat and axe co-ordinates//
+        /**********************************************/
 
     /*Getting boat and axe coordinates from the file*/
     public static int getBoatRow() throws Exception{
@@ -317,7 +319,7 @@ public class Controller  {
     }
 
 
-
+    //initialises the axe and boat position in the map viewer
     public void initPos() throws Exception{//setting the boat,axe coordinates on map.
 
        File file = new File("src/com/neet/DiamondHunter/sample/cord.txt");
@@ -356,7 +358,8 @@ public class Controller  {
 
 
 
-    public void initialize() {//Calling every functions
+    public void initialize() {
+        //Calling every functions
        //Sets background image for application.
        BackgroundImage bgIMG = new BackgroundImage(new Image("com/neet/DiamondHunter/sample/DRAFT3.jpg",645,586,false,true),BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,BackgroundSize.DEFAULT);
        Parent.setBackground(new Background(bgIMG));
@@ -376,7 +379,7 @@ public class Controller  {
         ap();
         showPos();
 
-
+        //These functions execute initially, when the map viewer is loaded
     }
 
 }
