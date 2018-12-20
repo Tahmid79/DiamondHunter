@@ -52,7 +52,7 @@ public class Controller  {
 
 
   public void tileblocked(){
-
+        //This functions checks whether the tile should be blocked for placing the axe and boat
 
       map.addEventHandler (MouseEvent.MOUSE_MOVED,event -> { //Adding mouse listeners for map.
                /*Each tile size is 20*/
